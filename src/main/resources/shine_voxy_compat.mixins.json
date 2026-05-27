@@ -1,0 +1,17 @@
+{
+    "required": true,
+    "minVersion": "0.8",
+    "package": "net.drew.shine_voxy_compat.mixin",
+    "compatibilityLevel": "JAVA_21",
+    "mixins": [
+    ],
+    "client": [
+        "voxy.VoxyRenderSystemMixin"
+    ],
+    "injectors": {
+        "defaultRequire": 1
+    },
+    "overwrites": {
+        "requireAnnotations": true
+    }
+}
