@@ -15,6 +15,17 @@ repositories {
         name = "Sinytra"
         url = "https://maven.sinytra.org/"
     }
+    exclusiveContent {
+        forRepository {
+            maven {
+                name = "Modrinth"
+                url = "https://api.modrinth.com/maven"
+            }
+        }// Only add this if you're using ForgeGradle, otherwise remove this line
+        filter {
+            includeGroup "maven.modrinth"
+        }
+    }
 }
 
 base {
@@ -41,11 +52,12 @@ neoForge {
         client {
             client()
 
-            setEnvironment([
-                    "__NV_PRIME_RENDER_OFFLOAD" : "1",
-                    "__VK_LAYER_NV_optimus" : "NVIDIA_only",
-                    "__GLX_VENDOR_LIBRARY_NAME": "nvidia"
-            ])
+            //Make minecraft use the dedicated NVIDIA GPU instead of integrated graphics
+            //setEnvironment([
+            //        "__NV_PRIME_RENDER_OFFLOAD" : "1",
+            //        "__VK_LAYER_NV_optimus" : "NVIDIA_only",
+            //        "__GLX_VENDOR_LIBRARY_NAME": "nvidia"
+            //])
 
             // Comma-separated list of namespaces to load gametests from. Empty = all namespaces.
             systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
@@ -120,8 +132,8 @@ dependencies {
 
     // Example mod dependency using a file as dependency
     // implementation files("libs/coolmod-${mc_version}-${coolmod_version}.jar")
-    implementation files(".jarlibs/shine-2.0.1+1.21.1-neoforge.jar")
-    implementation files(".jarlibs/voxy-0.2.14-alpha.jar")
+    implementation "maven.modrinth:shine:${shine_version}"
+    implementation files(voxy_jar)
 
     additionalRuntimeClasspath "org.sinytra:connector:2.0.0-beta.9+1.21.1"
     // Add FFAPI dependency
