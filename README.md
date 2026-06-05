@@ -1,5 +1,5 @@
 ## Shine - Voxy compatibility patch
-Very basic Neoforge mod which patches Voxy so Shine correctly disables its features on LODs, fixing the excessive amounts of bloom on them on some system configurations.
+Very basic Neoforge mod which patches Voxy's `renderOpaque` method, injecting Shine's `DhCompat` so Shine correctly disables its bloom render pass on LODs, fixing the excessive amounts of bloom on them on some system configurations.
 \
 (Note: I may be completely wrong since I only skimmed Shine's code briefly while writing this and am washed when it comes to programming so feel free to correct me if so)
 
