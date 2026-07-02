@@ -75,14 +75,14 @@ side = "CLIENT"
 [[dependencies."${mod_id}"]]
 modId = "shine"
 type = "required"
-versionRange = "[2.0.0,)"
+versionRange = "[2.0.1,)"
 ordering = "AFTER"
 side = "CLIENT"
 
 [[dependencies."${mod_id}"]]
 modId = "voxy"
 type = "required"
-versionRange = "[0.2.0,)"
+versionRange = ""
 ordering = "AFTER"
 side = "CLIENT"
 

@@ -133,7 +133,9 @@ dependencies {
     // Example mod dependency using a file as dependency
     // implementation files("libs/coolmod-${mc_version}-${coolmod_version}.jar")
     implementation "maven.modrinth:shine:${shine_version}"
-    implementation files(voxy_jar)
+
+    compileOnly "maven.modrinth:voxy:${voxy_version}"
+    runtimeOnly files(voxy_jar)
 
     additionalRuntimeClasspath "org.sinytra:connector:2.0.0-beta.9+1.21.1"
     // Add FFAPI dependency
